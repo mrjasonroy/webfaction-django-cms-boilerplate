@@ -15,3 +15,5 @@ ln -s $HOME/lib/python2.6/cms/media/cms
 ln -s $HOME/lib/python2.6/multilingual/media/multilingual
 ln -s $HOME/lib/python2.6/filer/media/filer
 ln -s $HOME/webapps/django/lib/python2.6/django/contrib/admin/media
+
+echo "Nearly done! Now create your local_settings.py and adjust your myproject.wsgi, then run restart-apache.sh"

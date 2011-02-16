@@ -23,15 +23,17 @@ Webfaction Control Panel Settings
 
 Now wait ten minutes, then visit `https://git.yourname.webfactional.com <https://git.yourname.webfactional.com>`_. You should be able to login with your webfaction username and the password that you chose in the extra info field when setting up the git application earlier.
 
+You should also see the standard Django page when visiting your real domain. Time to create a real project and establish an easy publishing workflow...
+
 Setup Local django-cms Project
-==============================
+==============================    
 
 * Create a project folder somewhere on your local development machine
 * cd into that project folder
 * Follow the instructions at `django-cms-html5-1140px-boilerplate <https://github.com/bitmazk/django-cms-html5-1140px-boilerplate>`_ to get a fully functional django / django-cms setup in a newly initiated git repository
 
-Install This Script on Webfaction Server
-========================================
+Install Everything on Webfaction Server
+=======================================
 
 Webfaction account::
 
@@ -50,4 +52,5 @@ Local account::
 
 Webfaction account::
 
-  
+  cd $HOME/src/webfaction-django-cms-boilerplate
+  ./bin/first_deployment.sh
