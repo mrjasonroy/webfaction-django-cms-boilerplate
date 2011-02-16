@@ -6,4 +6,7 @@ cd $HOME/webapps/git/
 ./bin/git init --bare ./repos/$reponame.git
 cd repos/$reponame.git
 ../../bin/git config http.receivepack true
+cd $HOME
+mkdir lib/python2.6
+easy_install-2.6 pip
 
