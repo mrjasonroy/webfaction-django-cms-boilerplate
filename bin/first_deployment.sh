@@ -12,6 +12,6 @@ cd $HOME
 ./bin/deploy-website.sh
 cd $HOME/webapps/static
 ln -s $HOME/lib/python2.6/cms/media/cms
-ln -s $HOME/lib/multilingual/media/multilingual
-ln -s $HOME/lib/filer/media/filer
+ln -s $HOME/lib/python2.6/multilingual/media/multilingual
+ln -s $HOME/lib/python2.6/filer/media/filer
 ln -s $HOME/webapps/django/lib/python2.6/django/contrib/admin/media
