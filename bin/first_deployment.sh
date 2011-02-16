@@ -6,6 +6,7 @@ echo "Name of your git repository (without the .git):"
 read gitname
 
 cd $HOME/src
+export GIT_SSL_NO_VERIFY=true
 git clone https://$username@git.$username.webfactional.com/$gitname.git website_src
 cd $HOME
 ./bin/deploy-website.sh
