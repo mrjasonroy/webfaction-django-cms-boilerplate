@@ -7,7 +7,8 @@ read gitname
 
 cd $HOME/src
 git clone https://$username@git.$username.webfactional.com/$gitname.git website_src
-./$HOME/bin/deploy-website.sh
+cd $HOME
+./bin/deploy-website.sh
 cd $HOME/webapps/static
 ln -s $HOME/lib/python2.6/cms/media/cms
 ln -s $HOME/lib/multilingual/media/multilingual
