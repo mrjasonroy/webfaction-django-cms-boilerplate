@@ -42,8 +42,8 @@ echo "Installing SASS"
 cd $HOME
 mkdir gems
 echo "export GEM_HOME=$PWD/gems" >> $HOME/.bashrc
-echo "export PATH=$PWD/bin:$PATH" >> $HOME/.bashrc
 touch $HOME/.bashrc
 gem install haml
-cp $HOME/src/webfaction-django-cms-boilerplate/lib/* $HOME/bin/
 
+echo "Copying deployment scripts"
+cp $HOME/src/webfaction-django-cms-boilerplate/lib/* $HOME/bin/
