@@ -57,6 +57,7 @@ Local account::
 
   cd path/to/your/project/
   git config http.sslVerify false
+  git config http.postBuffer 524288000
   git remote add origin https://[yourname]@git.[yourname].webfactional.com/[reponame].git
   git push origin master
 
