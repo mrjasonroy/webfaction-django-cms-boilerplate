@@ -1,6 +1,3 @@
-ATTENTION! DO NOT USE THIS, YET!
-This has not been tested against a clean Webfaction account, yet.
-
 What is it all about?
 =====================
 
@@ -12,7 +9,7 @@ In the end you will have your django-cms powered website in a private git reposi
 
 Sounds good? Ok! Let's do it...
 
-Webfaction Control Panel Settings
+Webfaction control panel settings
 =================================
 
 * Login to your Webfaction account at https://panel.webfaction.com
@@ -29,20 +26,22 @@ Webfaction Control Panel Settings
 * Go to "Databases"
 * Add a new database. The standard name should be fine. Note down your password as you will need it later or create a new password if desired.
 
-Now wait ten minutes, then visit `https://git.yourname.webfactional.com <https://git.yourname.webfactional.com>`_. You should be able to login with your webfaction username and the password that you chose in the extra info field when setting up the git application earlier.
+Now wait ten minutes, then visit `https://git.yourname.webfactional.com <https://git.yourname.webfactional.com>`_. You should be able to login with your webfaction username and the password that you chose earlier as extra info when setting up the git application.
 
 You should also see the standard Django page when visiting your real domain. Time to create a real project and establish an easy publishing workflow...
 
-Setup Local django-cms Project
+Setup local django-cms project
 ==============================    
+
+Throughout this script you will get some prompts like "Password: ". These happen when a "git pull" command is called. Therefore the password you need to enter is the one that you chose for your git application.
 
 * Create a project folder somewhere on your local development machine
 * cd into that project folder
 * Follow the instructions at `django-cms-html5-1140px-boilerplate <https://github.com/bitmazk/django-cms-html5-1140px-boilerplate>`_ to get a fully functional django / django-cms setup in a newly initiated git repository
 
-At the next step we will place this new local git repository on your Webfaction server, install all neccessary Python modules and deploy your local project on the server. If all goes well, you only need to edit your local_settings.py manually and restart the Apache process.
+At the next step you will place this new local git repository on your Webfaction server, install all neccessary Python modules and deploy your local project on the server. If all goes well, you will have a fresh new django-cms site up and running.
 
-Install Everything on your Webfaction Server
+Install everything on your webfaction server
 ============================================
 
 Webfaction account::
@@ -69,3 +68,8 @@ Webfaction account::
 
   cd $HOME/src/webfaction-django-cms-boilerplate
   ./bin/first_deployment.sh
+
+License
+=======
+
+`The Unlicense <http://unlicense.org//>`_
