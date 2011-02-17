@@ -72,4 +72,4 @@ Webfaction account::
 License
 =======
 
-`The Unlicense <http://unlicense.org//>`_
+`The Unlicense <http://unlicense.org>`_
