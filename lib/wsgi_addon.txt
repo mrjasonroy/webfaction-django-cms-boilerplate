@@ -1,0 +1,9 @@
+import getpass
+
+
+user = getpass.getuser()
+sys.path = [
+    '/home/%s/webapps/django/project' % user,
+    '/home/%s/gems/bin' % user,
+] + sys.path
+

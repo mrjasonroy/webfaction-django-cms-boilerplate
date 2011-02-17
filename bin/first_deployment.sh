@@ -16,4 +16,11 @@ ln -s $HOME/lib/python2.6/multilingual/media/multilingual
 ln -s $HOME/lib/python2.6/filer/media/filer
 ln -s $HOME/webapps/django/lib/python2.6/django/contrib/admin/media
 
+echo "Deleting standard django project"
+rm -rf $HOME/webapps/django/myproject
+
+echo "Modifying myproject.wsgi"
+sed -i 's/myproject/project/g' $HOME/webapps/django/myproject.wsgi
+sed -i '/^import sys/r $HOME/src/webfaction-django-cms.boilerplate/lib/wsgi_addon.txt' $HOME/webapps/django/myproject.wsgi
+
 echo "Nearly done! Now create your local_settings.py and adjust your myproject.wsgi, then run restart-apache.sh"
