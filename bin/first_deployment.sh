@@ -14,6 +14,7 @@ read dbpassword
 cd $HOME/src
 export GIT_SSL_NO_VERIFY=true
 git clone https://$username@git.$username.webfactional.com/$gitname.git website_src
+mkdir $HOME/webapps/django/project
 cd $HOME
 ./bin/deploy-website.sh -no-syncdb
 cd $HOME/webapps/static
