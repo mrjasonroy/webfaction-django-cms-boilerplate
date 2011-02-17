@@ -46,4 +46,4 @@ touch $HOME/.bashrc
 gem install haml
 
 echo "Copying deployment scripts"
-cp $HOME/src/webfaction-django-cms-boilerplate/lib/* $HOME/bin/
+cp $HOME/src/webfaction-django-cms-boilerplate/lib/bin/* $HOME/bin/
