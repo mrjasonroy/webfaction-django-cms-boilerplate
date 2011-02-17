@@ -17,10 +17,10 @@ git clone https://$username@git.$username.webfactional.com/$gitname.git website_
 cd $HOME
 ./bin/deploy-website.sh -no-syncdb
 cd $HOME/webapps/static
-ln -s $HOME/lib/python2.6/cms/media/cms
-ln -s $HOME/lib/python2.6/multilingual/media/multilingual
-ln -s $HOME/lib/python2.6/filer/media/filer
-ln -s $HOME/webapps/django/lib/python2.6/django/contrib/admin/media
+ln -s $HOME/lib/python2.7/cms/media/cms
+ln -s $HOME/lib/python2.7/multilingual/media/multilingual
+ln -s $HOME/lib/python2.7/filer/media/filer
+ln -s $HOME/webapps/django/lib/python2.7/django/contrib/admin/media
 
 echo "Deleting standard django project"
 rm -rf $HOME/webapps/django/myproject
@@ -38,8 +38,8 @@ sed -i "s!projectroot!/home/$username/webapps/!g"
 
 echo "Initiating database"
 cd $HOME/webapps/django/project
-python2.6 manage.py syncdb --all
-python2.6 manage.py migrate --fake
+python2.7 manage.py syncdb --all
+python2.7 manage.py migrate --fake
 restart-apache.sh
 
-echo "BINGO! We are ready to start developing!"
+echo "BINGO! You are ready to start developing!"

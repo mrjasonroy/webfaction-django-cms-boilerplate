@@ -10,8 +10,8 @@ cd repos/$reponame.git
 cd $HOME
 
 echo "Installing pip and additional python modules"
-mkdir lib/python2.6
-easy_install-2.6 pip
+mkdir lib/python2.7
+easy_install-2.7 pip
 pip install south
 pip install BeautifulSoup
 pip install django-simple-captcha
@@ -27,7 +27,7 @@ cd $HOME/src
 wget http://downloads.sourceforge.net/project/scons/scons/2.0.0.final.0/scons-2.0.0.final.0.tar.gz
 tar -zxvf scons-2.0.0.final.0.tar.gz
 cd scons-2.0.0.final.0
-python2.6 setup.py install
+python2.7 setup.py install
 
 echo "Installing CSSTidy"
 cd $HOME/src
