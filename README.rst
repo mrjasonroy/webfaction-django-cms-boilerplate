@@ -53,6 +53,10 @@ Webfaction account::
   cd webfaction-django-cms-boilerplate
   ./bin/create_repo.sh
 
+It might happen that your ssh session freezes for example at "Downloading/unpacking south". In case of this event you can just open another terminal and start a new ssh session. Monitor your "$HOME/bin" folder. When a symlink called "csstidy" and a file called "sass" appears inside that folder, the script has continued successfully and you can terminate the frozen session. 
+
+If anyone knows why this happens I would be more than happy for a hint on how to prevent the constant freezing of ssh sessions to Webfaction servers!
+
 Local account::
 
   cd path/to/your/project/
