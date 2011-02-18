@@ -8,8 +8,8 @@ cd ~/webapps/django/project
 if [ $1 ]; then
 	:
 else
-	python2.6 manage.py syncdb
-	python2.6 manage.py migrate
+	python2.7 manage.py syncdb
+	python2.7 manage.py migrate
         cd ~/webapps/django/apache2/bin
 	./restart
 fi
