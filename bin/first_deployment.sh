@@ -11,15 +11,23 @@ read dbname
 echo "DB password:"
 read dbpassword
 
+echo "Downloading project sources"
 cd $HOME/src
 export GIT_SSL_NO_VERIFY=true
 git clone https://$username@git.$username.webfactional.com/$gitname.git website_src
+
+echo "Installing virtualenv"
+mkdir lib/python2.7
+easy_install-2.7 pip
+cd $HOME/src/website_src/bin
+pip install -r requirements.txt
+
+echo "Deploy website and create symlinks"
 mkdir $HOME/webapps/django/project
 cd $HOME
 ./bin/deploy-website.sh -no-syncdb
 cd $HOME/webapps/static
 ln -s $HOME/lib/python2.7/cms/media/cms
-ln -s $HOME/lib/python2.7/multilingual/media/multilingual
 ln -s $HOME/lib/python2.7/filer/media/filer
 ln -s $HOME/webapps/django/lib/python2.7/django/contrib/admin/media
 

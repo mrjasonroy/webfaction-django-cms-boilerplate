@@ -9,19 +9,6 @@ cd repos/$reponame.git
 ../../bin/git config http.receivepack true
 cd $HOME
 
-echo "Installing pip and additional python modules"
-mkdir lib/python2.7
-easy_install-2.7 pip
-pip install south
-pip install BeautifulSoup
-pip install django-simple-captcha
-pip install django-cms
-pip install django-css
-pip install easy-thumbnails
-pip install django-filer
-pip install django-multilingual-ng
-pip install django-mptt==0.3
-
 echo "Installing SCONs"
 cd $HOME/src
 wget http://downloads.sourceforge.net/project/scons/scons/2.0.0.final.0/scons-2.0.0.final.0.tar.gz
