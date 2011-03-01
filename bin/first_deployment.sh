@@ -15,8 +15,12 @@ echo "Downloading project sources"
 cd $HOME/src
 export GIT_SSL_NO_VERIFY=true
 git clone https://$username@git.$username.webfactional.com/$gitname.git website_src
+cd website_src
+git config http.sslVerify false
+git config http.postBuffer 524288000
 
 echo "Installing virtualenv"
+cd $HOME
 mkdir lib/python2.7
 easy_install-2.7 pip
 cd $HOME/src/website_src/bin
