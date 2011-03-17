@@ -50,6 +50,19 @@ sed -i "s/dbname/$dbname/g" local_settings.py
 sed -i "s/dbpassword/$dbpassword/g" local_settings.py
 sed -i "s!projectroot!/home/$username/!g" local_settings.py
 
+echo "Modifying mysql-backup.sh"
+cd $HOME
+mkdir backups
+cd bin
+sed -i "s/USERNAME/$username/g" mysql-backup.sh
+sed -i "s/DBUSER/$dbname/g" mysql-backup.sh
+sed -i "s/DBNAME/$dbname/g" mysql-backup.sh
+sed -i "s/DBPASSWORD/$dbpassword/g" mysql-backup.sh
+
+echo "Installing crontab for database backup"
+crontab -l > file; echo "0 2 * * * /home/$username/bin/mysql_backup.sh" >> file; crontab file;
+rm file
+
 echo "Initiating database"
 cd $HOME/webapps/django/project
 python2.7 manage.py syncdb --all
