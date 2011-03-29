@@ -29,7 +29,7 @@ echo "Installing SASS"
 cd $HOME
 mkdir gems
 echo "export GEM_HOME=$PWD/gems" >> $HOME/.bashrc
-touch $HOME/.bashrc
+export GEM_HOME=$HOME/gems
 gem install haml
 
 echo "Copying deployment scripts"
