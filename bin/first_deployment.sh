@@ -59,6 +59,10 @@ sed -i "s/DBUSER/$dbname/g" mysql-backup.sh
 sed -i "s/DBNAME/$dbname/g" mysql-backup.sh
 sed -i "s/DBPASSWORD/$dbpassword/g" mysql-backup.sh
 
+echo "Modifying show-memory.sh"
+cd $HOME/bin
+sed -i "s/USERNAME/$username/g" show-memory.sh
+
 echo "Installing crontab for database backup"
 crontab -l > file; echo "0 2 * * * /home/$username/bin/mysql_backup.sh" >> file; crontab file;
 rm file
