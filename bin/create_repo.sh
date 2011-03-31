@@ -34,3 +34,12 @@ gem install haml
 
 echo "Copying deployment scripts"
 cp $HOME/src/webfaction-django-cms-boilerplate/lib/bin/* $HOME/bin/
+
+echo "Creating .ssh folder"
+cd $HOME
+mkdir .ssh
+chmod 700 .ssh
+chmod 750 $HOME
+cd .ssh
+touch authorized_keys
+chmod 644 authorized_keys
