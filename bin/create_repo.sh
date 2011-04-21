@@ -4,9 +4,9 @@ read reponame
 
 echo "Creating bare git repository"
 cd $HOME/webapps/git/
-./bin/git init --bare ./repos/$reponame.git
+git init --bare ./repos/$reponame.git
 cd repos/$reponame.git
-../../bin/git config http.receivepack true
+git config http.receivepack true
 cd $HOME
 
 echo "Installing SCONs"
