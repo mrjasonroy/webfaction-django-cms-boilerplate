@@ -40,7 +40,7 @@ rm -rf $HOME/webapps/django/myproject
 
 echo "Modifying myproject.wsgi"
 sed -i 's/myproject/project/g' $HOME/webapps/django/myproject.wsgi
-#sed -i "/^import sys/r $HOME/src/webfaction-django-cms-boilerplate/lib/wsgi_addon.txt" $HOME/webapps/django/myproject.wsgi
+sed -i "/^import sys/r $HOME/src/webfaction-django-cms-boilerplate/lib/wsgi_addon.txt" $HOME/webapps/django/myproject.wsgi
 
 echo "Creating local_settings.py"
 cd $HOME/webapps/django/project
