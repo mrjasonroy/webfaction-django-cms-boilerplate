@@ -30,10 +30,9 @@ echo "Deploy website and create symlinks"
 mkdir $HOME/webapps/django/project
 cd $HOME
 ./bin/deploy-website.sh -no-syncdb
-cd $HOME/webapps/static
+cd $HOME/webapps/media
 ln -s $HOME/lib/python2.7/cms/media/cms
 ln -s $HOME/lib/python2.7/filer/media/filer
-ln -s $HOME/webapps/django/lib/python2.7/django/contrib/admin/media
 
 echo "Deleting standard django project"
 rm -rf $HOME/webapps/django/myproject
@@ -46,7 +45,7 @@ echo "Creating local_settings.py"
 cd $HOME/webapps/django/project
 cp local_settings.py.sample local_settings.py
 sed -i "s/dbuser/$dbname/g" local_settings.py
-sed -i "s/dbname/$dbname/g" local_settings.py
+7sed -i "s/dbname/$dbname/g" local_settings.py
 sed -i "s/dbpassword/$dbpassword/g" local_settings.py
 sed -i "s!projectroot!/home/$username/!g" local_settings.py
 
@@ -64,7 +63,7 @@ cd $HOME/bin
 sed -i "s/USERNAME/$username/g" show-memory.sh
 
 echo "Installing crontab for database backup"
-crontab -l > file; echo "0 2 * * * /home/$username/bin/mysql_backup.sh" >> file; crontab file;
+crontab -l > file; echo "0 2 * * * /home/$username/bin/mysql-backup.sh" >> file; crontab file;
 rm file
 
 echo "Initiating database"

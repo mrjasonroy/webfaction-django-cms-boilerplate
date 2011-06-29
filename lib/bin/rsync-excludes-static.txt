@@ -1,7 +1,0 @@
-- cms
-- media
-- filer
-- filer_private
-- filer_public
-- cms_page_media
-- multilingual

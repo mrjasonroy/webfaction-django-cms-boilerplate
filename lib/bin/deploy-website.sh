@@ -3,7 +3,7 @@
 cd ~/src/website_src
 git pull
 rsync -avz --stats --delete --exclude-from=$HOME/bin/rsync-excludes-django.txt ~/src/website_src/webapps/django/project ~/webapps/django/
-rsync -avz --stats --delete --exclude-from=$HOME/bin/rsync-excludes-static.txt ~/src/website_src/webapps/static/ ~/webapps/static/
+rsync -avz --stats --delete ~/src/website_src/webapps/static/ ~/webapps/static/
 cd ~/webapps/django/project
 if [ $1 ]; then
 	:

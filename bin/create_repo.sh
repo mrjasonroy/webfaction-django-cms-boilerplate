@@ -32,6 +32,26 @@ echo "export GEM_HOME=$PWD/gems" >> $HOME/.bashrc
 export GEM_HOME=$HOME/gems
 gem install haml
 
+echo "Installing Xapian" 
+cd ~/src
+wget http://oligarchy.co.uk/xapian/1.2.6/xapian-core-1.2.6.tar.gz
+tar zxf xapian-core-1.2.6.tar.gz
+cd xapian-core-1.2.6
+./configure --prefix=$HOME
+make
+make install
+cd ..
+wget http://oligarchy.co.uk/xapian/1.2.6/xapian-bindings-1.2.6.tar.gz
+tar zxf xapian-bindings-1.2.6.tar.gz
+cd xapian-bindings-1.2.6
+./configure --prefix=$HOME \
+PYTHON=/usr/local/bin/python2.7 \
+PYTHON_LIB=$HOME/lib/python2.7 \
+--with-python --without-ruby \
+--without-php --without-tcl
+make
+make install
+
 echo "Copying deployment scripts"
 cp $HOME/src/webfaction-django-cms-boilerplate/lib/bin/* $HOME/bin/
 
