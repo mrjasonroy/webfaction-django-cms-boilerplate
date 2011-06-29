@@ -30,7 +30,7 @@ cd $HOME
 mkdir gems
 echo "export GEM_HOME=$PWD/gems" >> $HOME/.bashrc
 export GEM_HOME=$HOME/gems
-gem install haml
+gem install sass
 
 echo "Installing Xapian" 
 cd ~/src
