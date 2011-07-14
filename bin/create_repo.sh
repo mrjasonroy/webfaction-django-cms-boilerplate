@@ -9,6 +9,9 @@ cd repos/$reponame.git
 git config http.receivepack true
 cd $HOME
 
+echo "Installing Mercurial"
+easy_install Mercurial
+
 echo "Installing SCONs"
 cd $HOME/src
 wget http://downloads.sourceforge.net/project/scons/scons/2.0.0.final.0/scons-2.0.0.final.0.tar.gz
