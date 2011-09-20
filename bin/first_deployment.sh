@@ -1,4 +1,6 @@
 #!/bin/sh
+. ../settings
+
 echo "Username of your Webfaction account:"
 read username
 
@@ -27,22 +29,22 @@ cd $HOME/src/website_src/bin
 pip install -r requirements.txt
 
 echo "Deploy website and create symlinks"
-mkdir $HOME/webapps/django/project
+mkdir $HOME/webapps/$django_folder/project
 cd $HOME
 ./bin/deploy-website.sh -no-syncdb
-cd $HOME/webapps/media
+cd $HOME/webapps/$media_folder
 ln -s $HOME/lib/python2.7/cms/media/cms
 ln -s $HOME/lib/python2.7/filer/media/filer
 
 echo "Deleting standard django project"
-rm -rf $HOME/webapps/django/myproject
+rm -rf $HOME/webapps/$django_folder/myproject
 
 echo "Modifying myproject.wsgi"
-sed -i 's/myproject/project/g' $HOME/webapps/django/myproject.wsgi
-sed -i "/^import sys/r $HOME/src/webfaction-django-cms-boilerplate/lib/wsgi_addon.txt" $HOME/webapps/django/myproject.wsgi
+sed -i 's/myproject/project/g' $HOME/webapps/$django_folder/myproject.wsgi
+sed -i "/^import sys/r $HOME/src/webfaction-django-cms-boilerplate/lib/wsgi_addon.txt" $HOME/webapps/$django_folder/myproject.wsgi
 
 echo "Creating local_settings.py"
-cd $HOME/webapps/django/project
+cd $HOME/webapps/$django_folder/project
 cp local_settings.py.sample local_settings.py
 sed -i "s/dbuser/$dbname/g" local_settings.py
 7sed -i "s/dbname/$dbname/g" local_settings.py
@@ -67,7 +69,7 @@ crontab -l > file; echo "0 2 * * * /home/$username/bin/mysql-backup.sh" >> file;
 rm file
 
 echo "Initiating database"
-cd $HOME/webapps/django/project
+cd $HOME/webapps/$django_folder/project
 python2.7 manage.py syncdb --all
 python2.7 manage.py migrate --fake
 restart-apache.sh

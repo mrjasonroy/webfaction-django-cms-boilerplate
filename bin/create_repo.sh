@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+. ../settings
+
 echo "Name of your git repository (without the .git):"
 read reponame
 

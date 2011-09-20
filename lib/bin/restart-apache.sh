@@ -1,3 +1,5 @@
 #!/bin/sh
-cd ~/webapps/django/apache2/bin
+. ../../settings
+
+cd ~/webapps/$django_folder/apache2/bin
 ./restart

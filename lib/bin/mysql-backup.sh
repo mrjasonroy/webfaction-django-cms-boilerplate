@@ -1,4 +1,6 @@
 #!/bin/bash
+. ../../settings
+
 KEEP=30
 BACKUPS=`find /home/USERNAME/backups -name "mysqldump-*.gz" | wc -l | sed 's/\ //g'`
 while [ $BACKUPS -ge $KEEP ]

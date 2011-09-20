@@ -1,0 +1,3 @@
+django_folder=bison_django
+static_folder=bison_static
+media_folder=bison_media
