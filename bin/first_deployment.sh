@@ -1,5 +1,5 @@
 #!/bin/sh
-. ../settings
+. ../settings.txt
 
 echo "Username of your Webfaction account:"
 read username

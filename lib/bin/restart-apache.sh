@@ -1,5 +1,5 @@
 #!/bin/sh
-. ../../settings
+. ../../settings.txt
 
 cd ~/webapps/$django_folder/apache2/bin
 ./restart

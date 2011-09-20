@@ -1,5 +1,5 @@
 #!/bin/bash
-. ../../settings
+. ../../settings.txt
 
 KEEP=30
 BACKUPS=`find /home/USERNAME/backups -name "mysqldump-*.gz" | wc -l | sed 's/\ //g'`
