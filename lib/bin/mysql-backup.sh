@@ -1,5 +1,7 @@
 #!/bin/bash
-. ../../settings.txt
+django_folder=bison_django
+static_folder=bison_static
+media_folder=bison_media
 
 KEEP=30
 BACKUPS=`find /home/USERNAME/backups -name "mysqldump-*.gz" | wc -l | sed 's/\ //g'`

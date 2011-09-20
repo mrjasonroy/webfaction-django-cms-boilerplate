@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-. ../settings.txt
+django_folder=bison_django
+static_folder=bison_static
+media_folder=bison_media
 
 echo "Name of your git repository (without the .git):"
 read reponame

@@ -1,5 +1,7 @@
 #!/bin/sh
-. ../settings.txt
+django_folder=bison_django
+static_folder=bison_static
+media_folder=bison_media
 
 echo "Username of your Webfaction account:"
 read username

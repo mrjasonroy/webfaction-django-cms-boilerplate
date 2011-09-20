@@ -1,6 +1,8 @@
 #!/bin/sh
 
-. ../../settings.txt
+django_folder=bison_django
+static_folder=bison_static
+media_folder=bison_media
 
 # if the first Argument is not set to 1, syncdb and migrate will be executed
 cd ~/src/website_src
